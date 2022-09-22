@@ -43,6 +43,6 @@ public class seleniumtutorial6 {
 
         // text() method
         driver.findElement(By.xpath("//a[text()='Sell']")).click(); //  //a[contains(text(), 'Sell')]  -- 6 elements will match as there's seller center, seller info etc.
-
+        
     }
 }
