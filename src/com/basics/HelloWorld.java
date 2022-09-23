@@ -134,12 +134,40 @@ public class HelloWorld {
         // String classname = income > 100_000 ? "First" : "Economy"
 
         Scanner roleInput = new Scanner(System.in);
-        String role = roleInput.nextLine().trim()
+        String role = roleInput.nextLine().trim();
 
         switch (role) {
             case "admin" -> System.out.println("You are an admin");
             case "moderator" -> System.out.println("You are a moderator");
             default -> System.out.println("You are a guest");
+        }
+
+
+        String input = "";
+        Scanner userInput = new Scanner(System.in);
+        // checks condition first then checks the action
+        while(true){
+            System.out.print("Input: ");
+            input = userInput.next().toLowerCase();
+            if (!input.equals("quit"))
+                break;
+            System.out.println(input);
+
+        }
+
+        // does the action first and checks condition
+        do {
+            System.out.print("Input: ");
+            input = userInput.next().toLowerCase();
+            System.out.println(input);
+
+        } while(!input.equals("quit"));
+
+
+        String[] fruits = {"Apple", "Orange", "Pineapple"};
+
+        for (String fruit : fruits){
+            System.out.println(fruit);
         }
 
     }

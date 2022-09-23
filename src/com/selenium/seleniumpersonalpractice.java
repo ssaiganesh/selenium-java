@@ -2,8 +2,11 @@ package com.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.ArrayList;
 
 public class seleniumpersonalpractice {
     public static void main(String[] args) throws InterruptedException {
@@ -20,17 +23,39 @@ public class seleniumpersonalpractice {
         // navigate to th eurl
         driver.get("https://www.google.com");
 
-        driver.switchTo().newWindow(WindowType.TAB);
-        String secondtab = driver.getWindowHandle();
-        System.out.println("Window handle after second tab: "+ secondtab);
-        driver.navigate().to("https://www.facebook.com");
+        WebDriver newTab=driver.switchTo().newWindow(WindowType.TAB);
+        String secondtab = newTab.getWindowHandle();
+        System.out.println("SecondTab Handle: "+ secondtab);
+        newTab.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        Thread.sleep(3000);
+        newTab.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+//        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
+        newTab.findElement(By.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")).click();
+        Thread.sleep(2000);
 
-        driver.switchTo().window(originalWindow);
-        Thread.sleep(1000);
+        WebDriver thirdTab = driver.switchTo().newWindow(WindowType.TAB);
+        thirdTab.get("https://www.facebook.com");
+        System.out.println("Third Tab Handle: "+ thirdTab.getWindowHandle());
+        Thread.sleep(3000);
+
         driver.switchTo().window(secondtab);
-        driver.close();
+        driver.navigate().to("https://www.gmail.com/");
+        Thread.sleep(3000);
 
+        ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+        System.out.println(tabs2);
+        driver.switchTo().window(tabs2.get(2));
+        Thread.sleep(3000);
+        driver.switchTo().window(tabs2.get(0));
 
     }
 
+//        driver.switchTo().window(originalWindow);
+//        Thread.sleep(1000);
+//        driver.switchTo().window(secondtab);
+
+
+
 }
+
+

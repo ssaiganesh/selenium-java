@@ -34,6 +34,9 @@ public class seleniumtutorial14 {
         }
 
         Set<String> windowhandles=driver.getWindowHandles();
+        // It prevents possible handlers duplication in the collection which may cause multiple
+        // invocations of the same handler after every event.
+        // List can consist of duplicated elements and Set can't
         System.out.println("Parent and Child Window handles: ");
         for (String handle:windowhandles)
         {
@@ -51,6 +54,8 @@ public class seleniumtutorial14 {
             }
 
         }
+
+
 
         driver.quit();
 
