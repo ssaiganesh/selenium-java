@@ -23,4 +23,31 @@ public class Login {
     public void setPassword(String strPassword){
         driver.findElement(password).sendKeys(strPassword);
     }
+
+    // Click on login button
+    public void clickLogin(){
+        driver.findElement(login).click();
+    }
+
+    public String getLoginTitle(){
+        return driver.findElement(titleText).getText();
+    }
+
+    /**
+     * This POM method will be exposed in test case to login in the application
+     * @param strUsername
+     * @param strPassword
+     * @return
+     */
+
+    public void loginToPage(String strUsername, String strPassword){
+        // Fill username
+        this.setUsername(strUsername);
+
+        // Fill Password
+        this.setPassword(strPassword);
+
+        // Click login button
+        this.clickLogin();
+    }
 }
