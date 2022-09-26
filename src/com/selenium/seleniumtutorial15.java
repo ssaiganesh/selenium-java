@@ -20,6 +20,6 @@ public class seleniumtutorial15 {
         driver.manage().window().maximize();
 
         // Select Class
-        Select selectelement =  new Select(driver.findElement(By.xpath("")))
+//        Select selectelement =  new Select(driver.findElement(By.xpath("")));
     }
 }
