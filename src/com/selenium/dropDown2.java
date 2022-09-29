@@ -8,7 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class seleniumDropDown2 {
+import java.util.List;
+
+public class dropDown2 {
     public static void main(String[] args){
         // For standard multi-select, there are 2 methods, use select method by Index or value, need to check visible text
         // Another to try is to hold ctrl and click
@@ -24,6 +26,9 @@ public class seleniumDropDown2 {
 
         WebElement dropdown= driver.findElement(By.name("cars"));
 
+
+
+
         Actions actions = new Actions(driver);
 
         actions.keyDown(Keys.LEFT_CONTROL)
@@ -34,11 +39,25 @@ public class seleniumDropDown2 {
                 .perform();
 
 
+        // To get number of options in dropdown
+        Select se = new Select(dropdown);
+        List<WebElement> options= se.getOptions();
+        System.out.println(options.size());
+
+        // Get selected value
+        System.out.println(se.getFirstSelectedOption().getText());
+
+        se.deselectAll(); // there's also deselect by value, deselect by index and deselect by visible Text
+
+
 //        Second method
 //        Select se= new Select(dropdown);
+
+
 //        if (se.isMultiple()){
-//            se.selectByValue("saab");
-//            se.selectByValue("audi");
+//            se.selectByIndex(1); // index of element
+//            se.selectByValue("audi"); // value of element
+//            se.selectByVisibleText("Opel"); // text of element
 //        }else {
 //            System.out.println("This option cannot be multiple selected");
 //        }

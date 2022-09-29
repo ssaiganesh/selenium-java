@@ -2,10 +2,9 @@ package com.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class seleniumtutorial2 {
+public class clickingLinkText {
     public static void main(String[] args) {
         // 1. Open Chrome Browser
         System.setProperty("webdriver.chrome.driver", "D://selenium jar and drivers//chromedriver//chromedriver.exe");
@@ -15,16 +14,12 @@ public class seleniumtutorial2 {
         driver.manage().window().maximize();
 
         // navigate to th eurl
-        driver.get("http://automationpractice.com/index.php");
+        driver.get("http://automationpractice.com/index.php?id_category=8&controller=category");
 
-        //[By Id]
-//        driver.findElement(By.id("search_query_top")).sendKeys("T-Shirts");
-        // OR
-//        WebElement search=driver.findElement(By.id("search_query_top")); // search box is of type WebElement
-//        search.sendKeys("T-Shirts");
+        //[By LinkText] - Preferred over Partial LinkText
+        driver.findElement(By.linkText("Printed Chiffon Dress")).click();
 
-        // [By Name]
-        driver.findElement(By.name("search_query")).sendKeys("Shirts");
-
+        //[By Partial LinkText]
+//        driver.findElement(By.partialLinkText("Chiffon Dress")).click();
     }
 }

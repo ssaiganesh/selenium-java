@@ -20,7 +20,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * 11. Quite the Browser
  */
 
-public class seleniumtutorial10 {
+public class verifyingURL_Tite_PageSource {
     public static void main(String[] args){
         // Open Chrome Browser
         System.setProperty("webdriver.chrome.driver", "D://selenium jar and drivers//chromedriver//chromedriver.exe");

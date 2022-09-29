@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class seleniumtutorial7 {
+public class xpathHierarchy {
     public static void main(String[] args) {
         // 1. Open Chrome Browser
         System.setProperty("webdriver.chrome.driver", "D://selenium jar and drivers//chromedriver//chromedriver.exe");

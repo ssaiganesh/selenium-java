@@ -3,7 +3,7 @@ package com.selenium;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class seleniumtutorial8 {
+public class shadowDOMAutomation {
     public static void main(String[] args){
         // 1. Open Chrome Browser
         System.setProperty("webdriver.chrome.driver", "D://selenium jar and drivers//chromedriver//chromedriver.exe");

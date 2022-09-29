@@ -9,18 +9,12 @@ package com.selenium;
 // 7. Verify Title
 // 8. Close the browser.
 
-import org.checkerframework.checker.units.qual.Time;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-public class seleniumtutorial5 {
+public class verifyingLogin {
     public static void main(String[] args) throws InterruptedException {
         // 1. Open Chrome Browser
         System.setProperty("webdriver.chrome.driver", "D://selenium jar and drivers//chromedriver//chromedriver.exe");
