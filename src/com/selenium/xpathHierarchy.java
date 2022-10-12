@@ -43,6 +43,7 @@ public class xpathHierarchy {
 
         // following node
         List<WebElement> followingtag=driver.findElements(By.xpath("//a[contains(.,'Autoline Industries')]/following::*"));
+
         System.out.println("The no of following elements from the current HTML tag is "+ followingtag.size());
 
         // following siblings
